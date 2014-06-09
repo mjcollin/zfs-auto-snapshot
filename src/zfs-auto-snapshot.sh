@@ -54,18 +54,18 @@ print_usage ()
 	echo "Usage: $0 [options] [-l label] <'//' | name [name...]>
   --default-exclude  Exclude datasets if com.sun:auto-snapshot is unset.
   -d, --debug        Print debugging messages.
-  -e, --event=EVENT  Set the com.sun:auto-snapshot-desc property to EVENT.
+  -e, --event EVENT  Set the com.sun:auto-snapshot-desc property to EVENT.
       --fast         Use a faster zfs list invocation.
   -n, --dry-run      Print actions without actually doing anything.
   -s, --skip-scrub   Do not snapshot filesystems in scrubbing pools.
   -h, --help         Print this usage message.
-  -k, --keep=NUM     Keep NUM recent snapshots and destroy older snapshots.
-  -l, --label=LAB    LAB is usually 'hourly', 'daily', or 'monthly'.
-  -p, --prefix=PRE   PRE is 'zfs-auto-snap' by default.
+  -k, --keep NUM     Keep NUM recent snapshots and destroy older snapshots.
+  -l, --label LAB    LAB is usually 'hourly', 'daily', or 'monthly'.
+  -p, --prefix PRE   PRE is 'zfs-auto-snap' by default.
   -q, --quiet        Suppress warnings and notices at the console.
-      --send-full=F  Send zfs full backup. Unimplemented.
-      --send-incr=F  Send zfs incremental backup. Unimplemented.
-      --sep=CHAR     Use CHAR to separate date stamps in snapshot names.
+      --send-full F  Send zfs full backup. Unimplemented.
+      --send-incr F  Send zfs incremental backup. Unimplemented.
+      --sep CHAR     Use CHAR to separate date stamps in snapshot names.
   -g, --syslog       Write messages into the system log.
   -r, --recursive    Snapshot named filesystem and all descendants.
   -v, --verbose      Print info messages.
