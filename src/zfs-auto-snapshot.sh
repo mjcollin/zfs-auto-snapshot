@@ -142,12 +142,12 @@ do_run () # [argv]
 
 do_snapshots () # properties, flags, snapname, oldglob, [targets...]
 {
-	local PROPS="$1"
-	local FLAGS="$2"
-	local NAME="$3"
-	local GLOB="$4"
-	local TARGETS="$5"
-	local KEEP=''
+	PROPS="$1"
+	FLAGS="$2"
+	NAME="$3"
+	GLOB="$4"
+	TARGETS="$5"
+	KEEP=''
 
 	# global DESTRUCTION_COUNT
 	# global SNAPSHOT_COUNT
@@ -188,6 +188,14 @@ do_snapshots () # properties, flags, snapname, oldglob, [targets...]
 			fi
 		done
 	done
+
+	unset PROPS
+	unset FLAGS
+	unset NAME
+	unset GLOB
+	unset TARGETS
+	unset KEEP
+
 }
 
 
