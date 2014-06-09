@@ -202,16 +202,6 @@ do_snapshots () # properties, flags, snapname, oldglob, [targets...]
 # main ()
 # {
 
-GETOPT=$(getopt \
-  --longoptions=default-exclude,dry-run,fast,skip-scrub,recursive \
-  --longoptions=event:,keep:,label:,prefix:,sep: \
-  --longoptions=debug,help,quiet,syslog,verbose \
-  --options=dnshe:l:k:p:rs:qgv \
-  -- "$@" ) \
-  || exit 128
-
-eval set -- "$GETOPT"
-
 while [ "$#" -gt '0' ]
 do
 	case "$1" in
@@ -320,8 +310,16 @@ do
 			shift 1
 			break
 			;;
+		(*)
+			leftovers="$leftovers $1"
+			shift 1
+			break
+			;;
+
 	esac
 done
+
+eval set $leftovers
 
 if [ "$#" -eq '0' ]
 then
